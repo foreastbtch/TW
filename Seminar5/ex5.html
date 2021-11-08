@@ -1,0 +1,59 @@
+<html>
+
+<head>
+    <script>
+        window.onload = () => {
+            // creați o aplicație simplă de tip agendă ce va conține un tabel cu două coloane 
+            // (Nume, Telefon) și un formular pentru adăugarea de noi contacte.
+            var form = document.getElementById("form");
+
+            var formSubmitHandler = (e) => {
+                e.preventDefault();
+                var tbody = document.getElementById("tbody");
+                var nume = document.getElementById("nume").value;
+                var telefon = document.getElementById("telefon").value;
+
+                var rand = document.createElement("tr");
+                var celula1 = document.createElement("td");
+                var celula2 = document.createElement("td");
+                celula1.innerHTML = nume;
+                celula2.innerHTML = telefon; 
+                rand.appendChild(celula1);
+                rand.appendChild(celula2);
+                // for (let i = 0; i < 2; i++) {
+                //     let celula = document.createElement("td");
+                //     if (i == 0) {
+                //         celula.innerHTML = nume;
+                //     } else {
+                //         celula.innerHTML = telefon;
+                //     }
+                //     rand.appendChild(celula);
+                // }
+                tbody.appendChild(rand);
+            }
+
+            form.onsubmit = formSubmitHandler;
+        }
+    </script>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <th>Nume</th>
+            <th>Telefon</th>
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+    <form id="form">
+        <label for="nume">Nume</label>
+        <input type="text" id="nume" />
+        <label for="telefon">Telefon</label>
+        <input type="text" id="telefon" />
+        <button type="submit" id="submitBtn">Add</button>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+.btn:hover {
+    color: blue;
+}
+
+input:focus {
+    background-color: yellow;
+}
+
+input:required {
+    background-color: red;
+}
+
+p::first-line {
+    font-size: 120%;
+    font-weight: bold;
+}
+
+
+/* #chk:checked {
+    border: 5px solid red;
+} */
+
+.box:checked {
+    /* border: 1px solid red; */
+    box-shadow: 0 0 0 2px red;
+    /* border-radius: 50%; */
+    /* border-radius: 10px; */
+}
